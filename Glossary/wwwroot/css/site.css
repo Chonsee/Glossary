@@ -1,0 +1,48 @@
+﻿:root {
+    --theme-color1: #195190FF;
+    --theme-color2: #A2A2A1FF;
+}
+
+body {
+    padding-bottom: 20px;
+    scroll-behavior: smooth;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+.navbar {
+    background-color: var(--theme-color1);
+    color: var(--theme-color2);
+}
+
+.navbar-brand, a, button {
+    transition: color 0.25s ease-in, background-color 0.25s ease-in;
+}
+
+    .navbar-brand:hover, a:hover, button:hover {
+        transition: color 0.25s ease-out, background-color 0.25s ease-in;
+    }
+
+button.btn.btn-primary > a {
+    color: white !important;
+}
+
+    button.btn.btn-primary > a:hover {
+        color: white !important;
+        text-decoration: none;
+    }
+
+#homeSubmitBtn {
+    width: -webkit-fill-available;
+}

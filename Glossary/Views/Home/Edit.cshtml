@@ -1,0 +1,28 @@
+﻿@model Glossary.Models.TermModel
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+
+            @using (Html.BeginForm("EditSubmit", "Home", FormMethod.Post))
+            {
+                <form>
+                    <input class="form-control" id="Id" name="Id" value="@Model.Id" hidden/>
+                    <div class="form-group">
+                        <label for="term">Term</label>
+                        <input class="form-control" id="term" name="TermNameOrPhrase" value="@Model.TermNameOrPhrase" required/>
+                        <small id="term" class="form-text text-muted">A single word or short phrase</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="definition">Definition</label>
+                        <textarea class="form-control" id="definition" name="Definition" required>@Model.Definition</textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="homeSubmitBtn">Submit</button>
+                </form>
+            }
+        </div>
+    </div>
+</div>

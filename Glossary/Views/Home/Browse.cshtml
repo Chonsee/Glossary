@@ -1,0 +1,34 @@
+﻿@model Glossary.Models.BrowseModel
+@{
+    ViewBag.Title = "Browse";
+    foreach (var term in Model.TermModels)
+    {
+        <div class="container">
+            <div class="row p-2">
+                <div class="col">
+                    <div class="card text-center">
+
+                        <!-- Probably will put an image here later, that is retrieved by an API.
+                            Eg. https://usearch.com/image-search-api,
+                            that will display the first image found by the TermNameOrPhrase -->
+
+                        <div class="card-body">
+                            <h5 class="card-title">@term.TermNameOrPhrase</h5>
+                            <p class="card-text">@term.Definition</p>
+
+
+
+                            @using (Html.BeginForm("Delete", "Home", new { id = term.Id }, FormMethod.Post))
+                            {
+                                <div>
+                                    <button type="button" class="btn btn-primary">@Html.ActionLink("Edit", "Edit", "Home", new { id = term.Id })</button>
+                                    <input class="btn btn-danger" type="submit" value="Delete" />
+                                </div>
+                            }
+                        </div>        
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
